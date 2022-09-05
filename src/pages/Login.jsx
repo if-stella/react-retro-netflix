@@ -28,7 +28,7 @@ const Login = () => {
     <div className="bg-black/50 fixed top-0 left-0 w-full h-screen"></div>
     <div className="fixed w-full px-4 py-24 z-50">
       <div className="max-w-[480px] h-[480px] mx-auto bg-black/75 text-white">
-        <div className="max-w-[343px] mx-auto py-16">
+        <div className="max-w-[343px] mx-auto flex flex-col h-[480px] justify-center">
           <h1 className="text-3xl font-bold">Welcome back!</h1>
           {error ? <p className='p-3 bg-red-400 my-2'>{error}</p> : null}
           <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
@@ -38,13 +38,13 @@ const Login = () => {
             <div className="flex justify-between items-center text-sm text-gray-500">
               <p className='flex'><input className="mr-2 accent-red-800" type="checkbox"/>Remember me next time</p>
             </div>
-            <p className="py-8">
+          </form>
+          <p className="pt-8">
               <span className='text-gray-500'>
                 New to Textflex?
               </span>{' '}
               <Link to='/signup' className="font-semibold">Sign up</Link>
               </p>
-          </form>
         </div>
       </div>
     </div>
