@@ -28,7 +28,7 @@ const Movie = ({ item }) => {
   };
 
   return (
-    <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative p-2'>
+    <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative pl-2'>
       <img
         className='w-full h-auto block'
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
