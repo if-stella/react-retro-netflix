@@ -38,11 +38,11 @@ const SavedShows = () => {
 
   return (
     <>
-      <h2 className='text-white font-bold md:text-xl p-4'>My Shows</h2>
+      <h2 className='text-white font-bold md:text-xl px-4 mt-4 mb-2'>Your Shows</h2>
       <div className='relative flex items-center group'>
         <MdChevronLeft
           onClick={slideLeft}
-          className='bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+          className='bg-white left-4 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
           size={40}
         />
         <div
@@ -52,7 +52,7 @@ const SavedShows = () => {
           {movies.map((item) => (
             <div
               key={item.id}
-              className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
+              className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative pl-2'
             >
               <img
                 className='w-full h-auto block'
@@ -63,14 +63,14 @@ const SavedShows = () => {
                 <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
                   {item?.title}
                 </p>
-                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 top-4 right-4'><ImCross /></p>
+                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-4 right-4'><ImCross /></p>
               </div>
             </div>
           ))}
         </div>
         <MdChevronRight
           onClick={slideRight}
-          className='bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+          className='bg-white right-4 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
           size={40}
         />
       </div>
