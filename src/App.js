@@ -7,63 +7,35 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
+import {SiNetflix} from 'react-icons/si';
+import {ReactComponent as Teletext} from './assets/Videotext.svg';
+import { useState } from "react";
 
-
-import { BiMoviePlay } from 'react-icons/bi';
-import {BsFileRichtextFill} from 'react-icons/bs';
-
-
-
-const oldIcon = document.querySelector(".retro");
-const newIcon = document.querySelector(".modern");
-
-const userTheme = localStorage.getItem("theme");
-
-const iconToggle = () => {
-   oldIcon.classList.toggle("display-none");
-   newIcon.classList.toggle("display-none");
-};
-
-const themeCheck = () => {
-  if (userTheme === "dark") {
-    document.documentElement.classList.add("dark");
-    oldIcon.classList.add("display-none");
-    return;
-  }
-  newIcon.classList.add("display-none");
-};
-
-const themeSwitch = () => {
-  if (document.documentElement.classList.contains("dark")) {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme","light");
-    iconToggle();
-    return;
-  }
-  document.documentElement.classList.add("dark");
-  localStorage.setItem("theme","dark");
-  iconToggle();
+const ThemeButton = ({setTheme}) => {
+  return(
+    <div className="absolute flex right-2/4 top-4 z-[91]">
+      <ThemeCircle className="btn-retro" setTheme={setTheme} value="" bg="bg-red-600" icon={<SiNetflix className="h-7 w-7" />} />
+      <ThemeCircle className="btn-modern" setTheme={setTheme} value="retro" bg="bg-black" icon={<Teletext className="h-7 w-7"/>}/>
+    </div>
+  )
 }
 
-{/*
-oldIcon.addEventListener("click", () => {
- themeSwitch();
-});
-
-newIcon.addEventListener("click", () => {
-  themeSwitch();
- });
-
- themeCheck(); */}
-
+const ThemeCircle = (props) => {
+  return (
+    <div className={"h-10 w-10 mr-4 rounded-full cursor-pointer text-white flex justify-center align-middle items-center " + props.bg}
+    onClick = {() => props.setTheme(props.value)}
+    >{props.icon}</div>
+  )
+}
 
 function App() {
+  const [theme, setTheme] = useState("")
+  console.log(theme)
   return (
-    <>
+    <div className={theme === "retro" ? "retro-theme" : ""}>
     <AuthContextProvider>
     <Navbar />
-    <BiMoviePlay className="text-white text-3xl absolute right-2/4 top-4 modern z-[100] cursor-pointer"/>
-    <BsFileRichtextFill className="text-white text-3xl absolute right-2/4 top-4 retro z-[100] cursor-pointer"/>
+    <ThemeButton setTheme = {setTheme}/>
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/login' element={<Login />}/>
@@ -71,7 +43,7 @@ function App() {
       <Route path='/account' element={<ProtectedRoute><Account /></ProtectedRoute>}/>
     </Routes>
     </AuthContextProvider>
-    </>
+    </div>
   );
 }
 

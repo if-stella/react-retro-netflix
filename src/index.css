@@ -2,14 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "LLPIXEL";
+  src: url("./assets/LLPIXEL3.ttf");
+}
+
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Press+Start+2P&display=swap");
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #000000;
+@layer base {
+  :root {
+    --text-color: #ffffffe0;
+    --text-color-hover: #ffffff;
+    --bg-color: #000000;
+    --main-font: 'Inter', sans-serif;
+    --fancy-font: 'Inter', sans-serif;
+    --toggle-modern:block;
+    --toggle-retro:none;
+    --button-border: none;
+    --button-radius: 0.25em;
+  }
+
+  .retro-theme {
+    --text-color: #ffffff;
+    --text-color-hover: #ffffff;
+    --bg-color: #000000;
+    --main-font: 'Press Start 2P', cursive;
+    --fancy-font: 'llpixel', cursive;
+    --toggle-modern:none;
+    --toggle-retro:block;
+    --button-border: 4px dashed black;
+    --button-radius: 0em;
+  }
 }
 
-.display-none {
-  @apply hidden;
+body {
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+}
+
+p, h2, h3 {
+  font-family: var(--main-font);
+}
+
+h1 {
+  font-family: var(--fancy-font);
+}
+
+button {
+  font-family: var(--main-font);
+  border: var(--button-border);
+  border-radius: var(--button-radius);
+}
+
+.primary {
+  color: var(--text-color);
+}
+
+.primary:hover {
+  color: var(--text-color-hover);
 }
