@@ -1,11 +1,19 @@
 module.exports = {
   content: [ "./src/**/*.{js,jsx,ts,tsx}",],
-  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      textColor: {
+        skin:{
+          base: "var(--text-color)",
+          hoverbase: "var(--text-color-hover)",
+        },
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        pressstart: ["Press Start 2P", "cursive"],
+        llpixel: ["LLPIXEL", "cursive"],
+      },
   },
-  variants: {
-    backgroundColor: ['dark']
-  },
-  plugins: [require('tailwind-scrollbar-hide', 'tailwindcss-dark-mode')],
+  plugins: [require('tailwind-scrollbar-hide'),],
+  }
 }
