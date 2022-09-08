@@ -48,9 +48,9 @@ const Movie = ({ item }) => {
           </p>
           <p onClick={saveShow}>
           {like ? (
-            <FaHeart className='absolute top-4 left-4 text-red-600' />
+            <FaHeart className='absolute top-4 left-4 text-red-600 w-6 h-6' />
           ) : (
-            <FaRegHeart className='absolute top-4 left-4 text-gray-300' />
+            <FaRegHeart className='absolute top-4 left-4 text-gray-300 w-6 h-6' />
           )}
         </p>
       </div>
