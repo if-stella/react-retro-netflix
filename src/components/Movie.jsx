@@ -27,6 +27,14 @@ const Movie = ({ item }) => {
     }
   };
 
+  const truncateString = (str, num) => {
+    if (str?.length > num) {
+      return str.slice(0, num) + '...';
+    } else {
+      return str;
+    }
+  };
+
   return (
     <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative pl-2'>
       <img
@@ -34,9 +42,9 @@ const Movie = ({ item }) => {
         src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
         alt={item?.title}
       />
-      <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white'>
+      <div className='absolute top-0 left-0 w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] h-full hover:bg-black/80 opacity-0 hover:opacity-100 ml-2 text-white'>
           <p className='white-space-normal text-xs md:text-sm lg:text-lg font-semibold flex justify-center items-center h-full text-center'>
-            {item?.title}
+            {truncateString(item?.title, 19)}
           </p>
           <p onClick={saveShow}>
           {like ? (

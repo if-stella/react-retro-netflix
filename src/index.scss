@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "LLPIXEL";
+  src: url("./assets/LLPIXEL3.ttf");
+}
+
+@font-face {
+  font-family: "Teletext";
+  src: url("./assets/EuropeanTeletextNuevo.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap");
+
+@layer base {
+  :root {
+    --text-color: #ffffffe0;
+    --text-color-hover: #ffffff;
+    --bg-color: #000000;
+    --main-font: 'Inter', sans-serif;
+    --fancy-font: 'Inter', sans-serif;
+    --toggle-modern:block;
+    --toggle-retro:none;
+    --button-border: none;
+    --button-fs:1em;
+    --button-radius: 0.25em;
+    --logo-color:rgb(220, 38, 38);
+    --nav-button-bg: rgba(220, 38, 38, 0.95);
+    --nav-button-bg-hov:rgb(220, 38, 38);
+    --nav-button-hov-bor-style:solid;
+    --main-btn-first-hov-bg:#ffffff;
+    --main-btn-first-bg: rgb(229 231 235);
+    --main-p-col: rgb(209 213 219);
+    --main-p-size:1em;
+    --main-p-max-w:100%;
+    --main-info-top:45%;
+
+    @media (min-width: 640px) {
+      .main-info {
+        top: 36%;
+      }
+    }
+  }
+
+  .retro-theme {
+    --text-color: #ffffff;
+    --text-color-hover: #ffffff;
+    --bg-color: #000000;
+    --main-font: 'teletext', cursive;
+    --fancy-font: 'llpixel', cursive;
+    --toggle-modern:none;
+    --toggle-retro:block;
+    --button-border: 3px solid transparent;
+    --button-hov-border:3px inset #1b1b1b;
+    --main-btn-first-bc: #fff;
+    --main-btn-first-hov-bc: #fff;
+    --main-btn-second-bg:#242424;
+    --button-radius: 0em;
+    --button-fs:1.2em;
+    --img-render:pixelated;
+    --img-filter: saturate(10);
+    --logo-color:#ffffff;
+    --nav-button-bor:3px transparent solid;
+    --nav-button-bor-hov: 3px #0000FF inset;
+    --nav-button-bg:#0000FF;
+    --nav-button-bg-hov:#0000FF;
+    --main-btn-first-hov-bg:#ffffff;
+    --main-btn-first-bg: #ffffff;
+    --main-p-col: #fff;
+    --main-p-size:1.25em;
+    --main-p-max-w:100%;
+    --main-info-top:45%;
+
+    @media (min-width: 1280px) {
+      .main p {
+        max-width: 69%;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .main-info {
+        top: 30%;
+      }
+    }
+
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+}
+
+p, h2, h3 {
+  font-family: var(--main-font);
+}
+
+h1 {
+  font-family: var(--fancy-font);
+}
+
+.navbar h1{
+  color: var(--logo-color);
+}
+
+button {
+  font-family: var(--main-font);
+  border: var(--button-border);
+  border-radius: var(--button-radius);
+  font-size:var(--button-fs);
+}
+
+button:hover {
+  border: var(--button-hov-border);
+}
+
+.navbar .filled-button{
+  background: var(--nav-button-bg);
+  border: var(--nav-button-bor);
+}
+
+.navbar .filled-button:hover {
+  border: var(--nav-button-bor-hov);
+  background: var(--nav-button-bg-hov);
+}
+
+.primary {
+  color: var(--text-color);
+}
+
+.primary:hover {
+  color: var(--text-color-hover);
+}
+
+img {
+  image-rendering: var(--img-render);
+  width: var(--img-size);
+  filter: var(--img-filter);
+  -webkit-filter:var(--img-filter);
+}
+
+.main button:first-of-type {
+  background: var(--main-btn-first-bg);
+  border-color: var(--main-btn-first-bc);
+}
+
+.main button:first-of-type:hover {
+  background: var(--main-btn-first-hov-bg);
+  border-color: var(--main-btn-first-hov-bc);
+}
+
+.main button:nth-of-type(2) {
+  background:var(--main-btn-second-bg);
+  color:var(--main-btn-second-col);
+}
+
+.main p {
+  color: var(--main-p-col);
+  font-size: var(--main-p-size);
+  max-width: var(--main-p-max-w);
+}
+
+.main-info {
+  position:absolute;
+  top: var(--main-info-top);
+}
+
+@media (min-width: 768px) {
+  .main p {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main p {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main p {
+    max-width: 45%;
+  }
+}
+}
