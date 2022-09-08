@@ -23,6 +23,7 @@
     --fancy-font: 'Inter', sans-serif;
     --toggle-modern:block;
     --toggle-retro:none;
+    --nav-bg:linear-gradient(180deg, #000000 -90.64%, rgba(0, 0, 0, 0) 100%);
     --button-border: none;
     --button-fs:1em;
     --button-radius: 0.25em;
@@ -36,10 +37,11 @@
     --main-p-size:1em;
     --main-p-max-w:100%;
     --main-info-top:45%;
+    --main-overlay: linear-gradient(to right, black 0%, rgb(0 0 0 / 0) 100%);
 
     @media (min-width: 640px) {
       .main-info {
-        top: 36%;
+        top: 30%;
       }
     }
   }
@@ -52,6 +54,7 @@
     --fancy-font: 'llpixel', cursive;
     --toggle-modern:none;
     --toggle-retro:block;
+    --nav-bg:black;
     --button-border: 3px solid transparent;
     --button-hov-border:3px inset #1b1b1b;
     --main-btn-first-bc: #fff;
@@ -59,8 +62,6 @@
     --main-btn-second-bg:#242424;
     --button-radius: 0em;
     --button-fs:1.2em;
-    --img-render:pixelated;
-    --img-filter: saturate(10);
     --logo-color:#ffffff;
     --nav-button-bor:3px transparent solid;
     --nav-button-bor-hov: 3px #0000FF inset;
@@ -72,6 +73,10 @@
     --main-p-size:1.25em;
     --main-p-max-w:100%;
     --main-info-top:45%;
+    --main-h1-shadow: -10px -10px 20px #0a09127a, 10px 10px 20px #0a09127a;
+    --main-p-shadow: -5px -5px 10px #0a09127a, 5px 5px 10px #0a09127a;
+    --img-render:pixelated;
+    --img-filter: saturate(10);
 
     @media (min-width: 1280px) {
       .main p {
@@ -81,7 +86,7 @@
 
     @media (min-width: 640px) {
       .main-info {
-        top: 30%;
+        top: 27%;
       }
     }
 
@@ -100,10 +105,6 @@ h1 {
   font-family: var(--fancy-font);
 }
 
-.navbar h1{
-  color: var(--logo-color);
-}
-
 button {
   font-family: var(--main-font);
   border: var(--button-border);
@@ -115,14 +116,27 @@ button:hover {
   border: var(--button-hov-border);
 }
 
-.navbar .filled-button{
-  background: var(--nav-button-bg);
-  border: var(--nav-button-bor);
-}
 
-.navbar .filled-button:hover {
-  border: var(--nav-button-bor-hov);
-  background: var(--nav-button-bg-hov);
+.navbar {
+  background: var(--nav-bg);
+
+  h1 {
+    color: var(--logo-color);
+  }
+
+  .filled-button{
+    background: var(--nav-button-bg);
+    border: var(--nav-button-bor);
+  }
+
+  .filled-button:hover {
+    border: var(--nav-button-bor-hov);
+    background: var(--nav-button-bg-hov);
+  }
+
+  .textlink {
+  text-shadow: var(--main-p-shadow);
+  }
 }
 
 .primary {
@@ -140,30 +154,37 @@ img {
   -webkit-filter:var(--img-filter);
 }
 
-.main button:first-of-type {
-  background: var(--main-btn-first-bg);
-  border-color: var(--main-btn-first-bc);
-}
-
-.main button:first-of-type:hover {
-  background: var(--main-btn-first-hov-bg);
-  border-color: var(--main-btn-first-hov-bc);
-}
-
-.main button:nth-of-type(2) {
-  background:var(--main-btn-second-bg);
-  color:var(--main-btn-second-col);
-}
-
-.main p {
-  color: var(--main-p-col);
-  font-size: var(--main-p-size);
-  max-width: var(--main-p-max-w);
+.main {
+  button:first-of-type {
+    background: var(--main-btn-first-bg);
+    border-color: var(--main-btn-first-bc);
+  }
+  button:first-of-type:hover {
+    background: var(--main-btn-first-hov-bg);
+    border-color: var(--main-btn-first-hov-bc);
+  }
+  button:nth-of-type(2) {
+    background:var(--main-btn-second-bg);
+    color:var(--main-btn-second-col);
+  }
+  p {
+    color: var(--main-p-col);
+    font-size: var(--main-p-size);
+    max-width: var(--main-p-max-w);
+    text-shadow: var(--main-p-shadow);
+  }
+  h1 {
+    text-shadow: var(--main-h1-shadow);
+  }
 }
 
 .main-info {
   position:absolute;
   top: var(--main-info-top);
+}
+
+.main-overlay {
+  background-image: var(--main-overlay);
 }
 
 @media (min-width: 768px) {
