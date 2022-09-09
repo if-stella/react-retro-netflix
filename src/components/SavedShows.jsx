@@ -4,6 +4,10 @@ import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore';
 import { ImCross } from 'react-icons/im';
+import {ReactComponent as ChevronLeft} from '../assets/txt-icon-chevron-left.svg';
+import {ReactComponent as ChevronRight} from '../assets/txt-icon-chevron-right.svg';
+import {ReactComponent as Cross} from '../assets/txt-icon-cross.svg';
+
 
 const SavedShows = () => {
   const [movies, setMovies] = useState([]);
@@ -40,11 +44,13 @@ const SavedShows = () => {
     <>
       <h2 className='text-white font-bold md:text-xl px-4 mt-4 mb-2'>Your Shows</h2>
       <div className='relative flex items-center group'>
-        <MdChevronLeft
-          onClick={slideLeft}
-          className='bg-white left-4 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
-          size={40}
-        />
+      <MdChevronLeft
+      onClick={slideLeft}
+      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 left-4 new-row-icon"
+      size={40}/>
+      <ChevronLeft
+      onClick={slideLeft}
+      className="h-7 w-7 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 left-4 retro-row-icon" />
         <div
           id={'slider'}
           className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
@@ -63,16 +69,18 @@ const SavedShows = () => {
                 <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
                   {item?.title}
                 </p>
-                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-4 right-4'><ImCross /></p>
+                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-4 right-4'><ImCross className="new-icon"/> <Cross className='retro-icon w-6 h-6'  /></p>
               </div>
             </div>
           ))}
         </div>
         <MdChevronRight
-          onClick={slideRight}
-          className='bg-white right-4 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
-          size={40}
-        />
+        onClick={slideRight}
+        className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 right-4 new-row-icon"
+        size={40}/>
+        <ChevronRight
+        onClick={slideRight}
+        className="h-7 w-7 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 right-4 retro-row-icon" />
       </div>
     </>
   );

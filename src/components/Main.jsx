@@ -21,9 +21,9 @@ const Main = () => {
   };
 
   return (
-    <div className='w-full h-screen md:h-[600px] text-white main'>
+    <div className='w-full text-white main'>
       <div className="w-full h-full">
-      <div className='main-overlay absolute w-full h-screen md:h-[600px]'></div>
+      <div className='main-overlay absolute w-full main-img'></div>
         <img className="w-full h-full object-cover"
         src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
         alt={movie?.title}/>

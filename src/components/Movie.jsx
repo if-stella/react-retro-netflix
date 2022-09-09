@@ -3,11 +3,14 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 import { UserAuth } from '../context/AuthContext';
 import { db } from '../firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import {ReactComponent as HeartEmpty} from '../assets/txt-icon-heart-empty.svg';
+import {ReactComponent as HeartFill} from '../assets/txt-icon-heart-fill.svg';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
   const {user} = UserAuth();
+
 
   const movieID = doc(db, 'users', `${user?.email}`);
 
@@ -48,9 +51,15 @@ const Movie = ({ item }) => {
           </p>
           <p onClick={saveShow}>
           {like ? (
-            <FaHeart className='absolute top-4 left-4 text-red-600 w-6 h-6' />
+            <>
+            <FaHeart className='new-icon absolute top-4 left-4 text-red-600 w-6 h-6' />
+            <HeartFill className='retro-icon absolute top-4 left-4 w-6 h-6'  />
+            </>
           ) : (
-            <FaRegHeart className='absolute top-4 left-4 text-gray-300 w-6 h-6' />
+            <>
+            <FaRegHeart className='new-icon absolute top-4 left-4 text-gray-300 w-6 h-6' />
+            <HeartEmpty className='retro-icon absolute top-4 left-4 w-6 h-6'  />
+            </>
           )}
         </p>
       </div>

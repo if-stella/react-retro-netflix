@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const ThemeButton = ({setTheme}) => {
   return(
-    <div className="absolute flex right-2/4 top-4 z-[91]">
+    <div className="absolute flex right-2/4 top-5 z-[91]">
       <ThemeCircle className="btn-retro" setTheme={setTheme} value="" bg="bg-red-600" icon={<SiNetflix className="h-7 w-7" />} />
       <ThemeCircle className="btn-modern" setTheme={setTheme} value="retro" bg="bg-black" icon={<Teletext className="h-7 w-7"/>}/>
     </div>
@@ -30,7 +30,6 @@ const ThemeCircle = (props) => {
 
 function App() {
   const [theme, setTheme] = useState("")
-  console.log(theme)
   return (
     <div className={theme === "retro" ? "retro-theme" : ""}>
     <AuthContextProvider>
