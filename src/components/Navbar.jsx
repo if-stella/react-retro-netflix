@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar flex items-center justify-between p-4 z-[90] absolute w-full">
+    <div className="navbar flex items-center justify-between h-[80px] p-4 z-[90] absolute top-0 w-full">
       <Link to="/">
       <h1 className="font-semibold cursor-pointer text-3xl border-none">TEXTFLEX</h1>
       </Link>

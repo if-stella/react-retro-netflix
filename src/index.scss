@@ -23,6 +23,7 @@
     --fancy-font: 'Inter', sans-serif;
     --toggle-modern:block;
     --toggle-retro:none;
+    --home-mt:0px;
     --nav-bg:linear-gradient(180deg, #000000 -90.64%, rgba(0, 0, 0, 0) 100%);
     --button-border: none;
     --button-fs:1em;
@@ -31,6 +32,7 @@
     --nav-button-bg: rgba(220, 38, 38, 0.95);
     --nav-button-bg-hov:rgb(220, 38, 38);
     --nav-button-hov-bor-style:solid;
+    --main-height:100vh;
     --main-btn-first-hov-bg:#ffffff;
     --main-btn-first-bg: rgb(229 231 235);
     --main-p-col: rgb(209 213 219);
@@ -38,6 +40,16 @@
     --main-p-max-w:100%;
     --main-info-top:45%;
     --main-overlay: linear-gradient(to right, black 0%, rgb(0 0 0 / 0) 100%);
+    --retro-icon-show:none;
+    --new-icon-show:block;
+    --retro-row-icon-hov:none;
+    --new-row-icon-hov:block;
+    --account-img-height:400px;
+
+
+    @media (min-width: 768px) {
+      --main-height : 600px;
+    }
 
     @media (min-width: 640px) {
       .main-info {
@@ -54,7 +66,9 @@
     --fancy-font: 'llpixel', cursive;
     --toggle-modern:none;
     --toggle-retro:block;
-    --nav-bg:black;
+    --home-mt:80px;
+    --nav-bg:rgba(250,250,250,.01);
+    --nav-border: 3px outset blue;
     --button-border: 3px solid transparent;
     --button-hov-border:3px inset #1b1b1b;
     --main-btn-first-bc: #fff;
@@ -67,16 +81,25 @@
     --nav-button-bor-hov: 3px #0000FF inset;
     --nav-button-bg:#0000FF;
     --nav-button-bg-hov:#0000FF;
+    --main-border: 3px outset red;
+    --main-height:100vh;
     --main-btn-first-hov-bg:#ffffff;
     --main-btn-first-bg: #ffffff;
     --main-p-col: #fff;
     --main-p-size:1.25em;
     --main-p-max-w:100%;
     --main-info-top:45%;
+    --main-overlay: none;
     --main-h1-shadow: -10px -10px 20px #0a09127a, 10px 10px 20px #0a09127a;
     --main-p-shadow: -5px -5px 10px #0a09127a, 5px 5px 10px #0a09127a;
     --img-render:pixelated;
     --img-filter: saturate(10);
+    --retro-icon-show:block;
+    --new-icon-show:none;
+    --retro-row-icon-hov:block;
+    --new-row-icon-hov:none;
+    --row-border:3px outset #00FF00;
+    --account-img-height:320px;
 
     @media (min-width: 1280px) {
       .main p {
@@ -84,9 +107,13 @@
       }
     }
 
+    @media (min-width: 768px) {
+      --main-height : 520px;
+    }
+
     @media (min-width: 640px) {
       .main-info {
-        top: 27%;
+        top: 20%;
       }
     }
 
@@ -96,6 +123,19 @@ body {
   font-family: var(--main-font);
   background-color: var(--bg-color);
 }
+
+.home-container {
+  margin-top: var(--home-mt);
+}
+
+.account-container {
+  margin-top: var(--home-mt);
+}
+
+.account-image-overlay {
+  margin-top: var(--home-mt);
+}
+
 
 p, h2, h3 {
   font-family: var(--main-font);
@@ -119,6 +159,7 @@ button:hover {
 
 .navbar {
   background: var(--nav-bg);
+  border: var(--nav-border);
 
   h1 {
     color: var(--logo-color);
@@ -155,6 +196,9 @@ img {
 }
 
 .main {
+  height: var(--main-height);
+  border: var(--main-border);
+
   button:first-of-type {
     background: var(--main-btn-first-bg);
     border-color: var(--main-btn-first-bc);
@@ -176,6 +220,44 @@ img {
   h1 {
     text-shadow: var(--main-h1-shadow);
   }
+}
+
+.retro-icon {
+  display: var(--retro-icon-show);
+}
+
+.new-icon {
+  display: var(--new-icon-show);
+}
+
+.retro-row-icon {
+  display: none;
+}
+
+.new-row-icon {
+  display: none;
+}
+
+.group:hover .retro-row-icon {
+  display: var(--retro-row-icon-hov);
+}
+
+.group:hover .new-row-icon {
+  display: var(--new-row-icon-hov);
+}
+
+.account-image {
+  height: var(--account-img-height);
+}
+
+.account-image-overlay {
+  height: var(--account-img-height);
+  top:0px;
+}
+
+
+.main-img {
+  height: var(--main-height);
 }
 
 .main-info {
@@ -204,4 +286,8 @@ img {
     max-width: 45%;
   }
 }
+}
+
+.row-container {
+  border: var(--row-border);
 }

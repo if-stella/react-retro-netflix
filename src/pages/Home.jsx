@@ -5,11 +5,11 @@ import requests from '../Requests';
 
 const Home = () => {
   return (
-    <>
-    <Main />
-    <Row rowID="1" title='Trending' fetchURL={requests.requestTrending}/>
-    <Row rowID="2" title='Top Rated' fetchURL={requests.requestTopRated}/>
-    </>
+    <div className="home-container">
+      <Main />
+      <Row rowID="1" title='Trending' fetchURL={requests.requestTrending}/>
+      <Row rowID="2" title='Top Rated' fetchURL={requests.requestTopRated}/>
+    </div>
   )
 }
 
