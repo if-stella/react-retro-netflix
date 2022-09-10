@@ -23,13 +23,16 @@ const Main = () => {
   return (
     <div className='w-full text-white main'>
       <div className="w-full h-full">
-      <div className='main-overlay absolute w-full main-img'></div>
-        <img className="w-full h-full object-cover"
-        src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
-        alt={movie?.title}/>
+
+      <div className='main-overlay absolute'></div>
+
+          <img className="object-cover object-center"
+          src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+          alt={movie?.title}/>
       </div>
       <div className="w-full p-6 sm:p-16 main-info">
         <h1 className='text-3xl md:text-7xl font-bold'>{movie?.title}</h1>
+        <h1 className="glitch text-3xl md:text-7xl font-bold" data-text={movie?.title}>{movie?.title}</h1>
         <div className='my-4'>
           <button className=' text-black/90 border-white py-2 px-5 font-semibold hover:bg-white hover:text-black hover:border-gray-800'>Play</button>
           <button className=' text-white/80 py-2 px-5 ml-4 font-semibold hover:text-white '>Watch Later</button>
