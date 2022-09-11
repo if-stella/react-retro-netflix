@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserAuth } from "../context/AuthContext"
+import {FaBars, FaTimes} from 'react-icons/fa';
+import {ReactComponent as Close} from '../assets/txt-icon-cross.svg';
+
+
 
 const Navbar = () => {
+  const [nav,setNav] = useState(false)
+  const handleClick = () => setNav(!nav)
+  const [navbar,setNavbar] = useState(false)
+
   const {user, logOut} = UserAuth()
   const navigate = useNavigate();
 
@@ -16,11 +24,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar flex items-center justify-between h-[80px] p-4 z-[90] absolute top-0 w-full">
+    <div className={navbar ? 'navbar active w-full h-[64px] sm:h-[80px] flex justify-between items-center p-4 z-[50] absolute top-0' : 'navbar w-full h-[64px] sm:h-[80px] flex justify-between items-center p-4 z-[50] absolute top-0'}>
       <Link to="/">
-      <h1 className="font-semibold cursor-pointer text-3xl border-none">TEXTFLEX</h1>
+      <h1 className="font-semibold cursor-pointer border-none">TEXTFLEX</h1>
       </Link>
-      <div>
+      <div className="hidden md:flex">
       {user?.email ? (
         <div>
           <Link to='/account'>
@@ -39,7 +47,33 @@ const Navbar = () => {
         </div>
       )}
       </div>
-    </div>
+      <div onClick={handleClick} className='md:hidden text-white z-[55]'>
+        {!nav ? <FaBars /> :
+        <>
+        <FaTimes className="new-icon" />
+        <Close className="retro-icon w-4 h-4"/>
+        </>}
+      </div>
+
+
+      {user?.email ? (
+         <div className={!nav ? 'hidden' : 'mobinav top-0 left-0 w-full h-screen flex flex-col justify-center items-center gap-7'}>
+          <Link to='/account'>
+            <button className='primary sm:pr-4 font-semibold border-none hover:border-none textlink'>Your Account</button>
+          </Link>
+          <button onClick={handleLogout} className='bg-red-600/95 hover:bg-red-600 px-5 py-2.5 cursor-pointer primary font-semibold filled-button'>Logout</button>
+        </div>
+      ) : (
+        <div className={!nav ? 'hidden' : 'mobinav top-0 left-0 w-full h-screen flex flex-col justify-center items-center gap-7'}>
+          <Link to='/login'>
+            <button className='primary sm:pr-4 font-semibold border-none hover:border-none textlink'>Log In</button>
+          </Link>
+          <Link to='/signup'>
+            <button className='bg-red-600/95 hover:bg-red-600 px-5 py-2.5 cursor-pointer primary font-semibold border-none filled-button'>Sign Up</button>
+          </Link>
+        </div>
+      )}
+      </div>
   )
 }
 

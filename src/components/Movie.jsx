@@ -57,8 +57,8 @@ const Movie = ({ item }) => {
             </>
           ) : (
             <>
-            <FaRegHeart className='new-icon absolute top-4 left-4 text-gray-300 w-6 h-6' />
-            <HeartEmpty className='retro-icon absolute top-4 left-4 w-6 h-6'  />
+            <FaRegHeart className='new-icon absolute top-4 left-4 text-gray-300 hover:text-red-600 w-6 h-6' />
+            <HeartEmpty className='retro-icon absolute top-4 left-4 w-6 h-6 fill-gray-300 hover:fill-red-600'  />
             </>
           )}
         </p>
