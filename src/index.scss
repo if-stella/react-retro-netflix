@@ -21,19 +21,25 @@
     --bg-color: #000000;
     --main-font: 'Inter', sans-serif;
     --fancy-font: 'Inter', sans-serif;
-    --toggle-modern:block;
-    --toggle-retro:none;
+    --btn-retro-show:block;
+    --btn-modern-show:none;
     --home-mt:0px;
     --nav-bg:linear-gradient(180deg, #000000 -90.64%, rgba(0, 0, 0, 0) 100%);
     --button-border: none;
     --button-fs:1em;
     --button-radius: 0.25em;
+    --switch-btn-bg-color:#111111;
+    --switch-btn-color:rgba(220, 38, 38, 0.95);
+    --switch-btn-bg-color-hov:black;
     --logo-color:rgb(220, 38, 38);
+    --logo-size:1em;
     --nav-button-bg: rgba(220, 38, 38, 0.95);
     --nav-button-bg-hov:rgb(220, 38, 38);
     --nav-button-hov-bor-style:solid;
     --img-width:100%;
     --main-height:100vh;
+    --main-btn-second-col:rgb(229 231 235);
+    --main-btn-second-colhov:#fff;
     --main-btn-first-hov-bg:#ffffff;
     --main-btn-first-bg: rgb(229 231 235);
     --main-p-col: rgb(209 213 219);
@@ -56,9 +62,8 @@
     }
 
     @media (min-width: 640px) {
-      .main-info {
-        top: 30%;
-      }
+      --main-info-top: 30%;
+      --logo-size:2em;
     }
   }
 
@@ -68,11 +73,10 @@
     --bg-color: #000000;
     --main-font: 'teletext', cursive;
     --fancy-font: 'llpixel', cursive;
-    --toggle-modern:none;
-    --toggle-retro:block;
-    --home-mt:80px;
-    --nav-bg:rgba(250,250,250,.01);
-    --nav-border: 3px outset black;
+    --btn-retro-show:none;
+    --btn-modern-show:block;
+    --nav-bg:black;
+    --home-mt:64px;
     --button-border: 3px solid transparent;
     --button-hov-border:3px inset #1b1b1b;
     --main-btn-first-bc: #fff;
@@ -80,7 +84,12 @@
     --main-btn-second-bg:#242424;
     --button-radius: 0em;
     --button-fs:1.2em;
+    --logo-size:1em;
     --logo-color:#ffffff;
+    --switch-btn-bg-color:rgb(229 231 235);
+    --switch-btn-color:rgb(220, 38, 38);
+    --switch-btn-color-hov:rgb(220, 38, 38);
+    --switch-btn-bg-color-hov:#fff;
     --nav-button-bor:3px transparent solid;
     --nav-button-bor-hov: 3px #0000FF inset;
     --nav-button-bg:#0000FF;
@@ -116,11 +125,10 @@
     }
 
     @media (min-width: 640px) {
-      .main-info {
-        top: 20%;
-      }
+      --main-info-top: 20%;
+      --logo-size:2em;
+      --home-mt:80px;
     }
-
 }
 
 body {
@@ -162,11 +170,12 @@ button:hover {
 
 
 .navbar {
-  background: var(--nav-bg);
   border: var(--nav-border);
+  background: var(--nav-bg);
 
   h1 {
     color: var(--logo-color);
+    font-size:var(--logo-size);
   }
 
   .filled-button{
@@ -182,6 +191,12 @@ button:hover {
   .textlink {
   text-shadow: var(--main-p-shadow);
   }
+}
+
+.mobinav {
+  background: black;
+  position: absolute;
+  z-index: 53;
 }
 
 .primary {
@@ -215,6 +230,11 @@ img {
     background:var(--main-btn-second-bg);
     color:var(--main-btn-second-col);
   }
+
+  button:nth-of-type(2):hover {
+    color:var(--main-btn-second-col-hov);
+  }
+
   p {
     color: var(--main-p-col);
     font-size: var(--main-p-size);
@@ -236,6 +256,25 @@ img {
   img {
     height: var(--main-height);
   }
+}
+
+.switchcircle {
+  background: var(--switch-btn-bg-color);
+  color: var(--switch-btn-color);
+  border-radius: 100px;
+}
+
+.switchcircle:hover {
+  background: var(--switch-btn-bg-color-hov);
+  color: var(--switch-btn-color-hov);
+}
+
+.btn-retro {
+  display: var(--btn-retro-show);
+}
+
+.btn-modern {
+  display: var(--btn-modern-show);
 }
 
 .glitch{

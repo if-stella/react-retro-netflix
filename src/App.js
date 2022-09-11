@@ -13,16 +13,16 @@ import { useState } from "react";
 
 const ThemeButton = ({setTheme}) => {
   return(
-    <div className="absolute flex right-2/4 top-5 z-[91]">
-      <ThemeCircle className="btn-retro" setTheme={setTheme} value="" bg="bg-red-600" icon={<SiNetflix className="h-7 w-7" />} />
-      <ThemeCircle className="btn-modern" setTheme={setTheme} value="retro" bg="bg-black" icon={<Teletext className="h-7 w-7"/>}/>
+    <div className="absolute left-1/2 transform -translate-x-1/2 top-5 sm:top-6 z-[50]">
+      <ThemeCircle setTheme={setTheme} value="" icon={<SiNetflix className="h-7 w-7 sm:h-8 sm:w-8 p-1 btn-modern" />} />
+      <ThemeCircle setTheme={setTheme} value="retro" icon={<Teletext className="h-7 w-7 sm:h-8 sm:w-8 p-1 btn-retro"/>}/>
     </div>
   )
 }
 
 const ThemeCircle = (props) => {
   return (
-    <div className={"h-10 w-10 mr-4 rounded-full cursor-pointer text-white flex justify-center align-middle items-center " + props.bg}
+    <div className={"cursor-pointer switchcircle"}
     onClick = {() => props.setTheme(props.value)}
     >{props.icon}</div>
   )

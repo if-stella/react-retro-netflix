@@ -31,11 +31,11 @@ const Main = () => {
           alt={movie?.title}/>
       </div>
       <div className="w-full p-6 sm:p-16 main-info">
-        <h1 className='text-3xl md:text-7xl font-bold'>{movie?.title}</h1>
-        <h1 className="glitch text-3xl md:text-7xl font-bold" data-text={movie?.title}>{movie?.title}</h1>
+        <h1 className='text-4xl md:text-7xl font-bold'>{movie?.title}</h1>
+        <h1 className="glitch text-4xl md:text-7xl font-bold" data-text={movie?.title}>{movie?.title}</h1>
         <div className='my-4'>
-          <button className=' text-black/90 border-white py-2 px-5 font-semibold hover:bg-white hover:text-black hover:border-gray-800'>Play</button>
-          <button className=' text-white/80 py-2 px-5 ml-4 font-semibold hover:text-white '>Watch Later</button>
+          <button className=' text-black/90 border-white py-2 w-full sm:w-auto sm:px-5 font-semibold hover:bg-white hover:text-black hover:border-gray-800'>Play</button>
+          <button className=' text-white/80 mt-4 sm:mt-0 py-2 w-full sm:w-auto sm:px-5 ml-0 sm:ml-4 font-semibold hover:text-white '>Watch Later</button>
         </div>
         <p className='my-4'>
           {truncateString(movie?.overview, 150)}
