@@ -4,6 +4,9 @@ import { UserAuth } from "../context/AuthContext"
 import {FaBars, FaTimes} from 'react-icons/fa';
 import {ReactComponent as Close} from '../assets/txt-icon-cross.svg';
 
+import {ReactComponent as Burger} from '../assets/txt-icon-burger.svg';
+import {ReactComponent as LogoRetro} from '../assets/logo-retro.svg';
+import {ReactComponent as LogoModern} from '../assets/logo-modern.svg';
 
 
 const Navbar = () => {
@@ -26,7 +29,8 @@ const Navbar = () => {
   return (
     <div className={navbar ? 'navbar active w-full h-[64px] sm:h-[80px] flex justify-between items-center p-4 z-[50] absolute top-0' : 'navbar w-full h-[64px] sm:h-[80px] flex justify-between items-center p-4 z-[50] absolute top-0'}>
       <Link to="/">
-      <h1 className="font-semibold cursor-pointer border-none">TEXTFLEX</h1>
+        <LogoRetro className="cursor-pointer w-28 sm:w-32 retro-icon"/>
+        <LogoModern className="cursor-pointer w-28 sm:w-32 new-icon"/>
       </Link>
       <div className="hidden md:flex">
       {user?.email ? (
@@ -48,10 +52,15 @@ const Navbar = () => {
       )}
       </div>
       <div onClick={handleClick} className='md:hidden text-white z-[55]'>
-        {!nav ? <FaBars /> :
+        {!nav ?
         <>
-        <FaTimes className="new-icon" />
-        <Close className="retro-icon w-4 h-4"/>
+        <Burger className="retro-icon cursor-pointer w-7 h-7"/>
+        <FaBars className="new-icon cursor-pointer w-5 h-5"/>
+        </>
+         :
+        <>
+        <FaTimes className="cursor-pointer new-icon w-5 h-5" />
+        <Close className="cursor-pointer retro-icon w-5 h-5"/>
         </>}
       </div>
 

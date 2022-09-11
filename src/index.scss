@@ -29,8 +29,6 @@
     --button-fs:1em;
     --button-radius: 0.25em;
     --switch-btn-bg-color:#111111;
-    --switch-btn-color:rgba(220, 38, 38, 0.95);
-    --switch-btn-bg-color-hov:black;
     --logo-color:rgb(220, 38, 38);
     --logo-size:1em;
     --nav-button-bg: rgba(220, 38, 38, 0.95);
@@ -56,14 +54,10 @@
     --new-row-icon-hov:block;
     --account-img-height:400px;
 
-
-    @media (min-width: 768px) {
-      --main-height : 600px;
-    }
-
     @media (min-width: 640px) {
       --main-info-top: 30%;
       --logo-size:2em;
+      --main-height:80vh;
     }
   }
 
@@ -86,21 +80,18 @@
     --button-fs:1.2em;
     --logo-size:1em;
     --logo-color:#ffffff;
-    --switch-btn-bg-color:rgb(229 231 235);
-    --switch-btn-color:rgb(220, 38, 38);
-    --switch-btn-color-hov:rgb(220, 38, 38);
-    --switch-btn-bg-color-hov:#fff;
+    --switch-btn-bg-color:#fff;
     --nav-button-bor:3px transparent solid;
     --nav-button-bor-hov: 3px #0000FF inset;
     --nav-button-bg:#0000FF;
     --nav-button-bg-hov:#0000FF;
-    --main-height:100vh;
+    --main-height: calc(100vh - 64px);
     --main-btn-first-hov-bg:#ffffff;
     --main-btn-first-bg: #ffffff;
     --main-p-col: #fff;
     --main-p-size:1.25em;
     --main-p-max-w:100%;
-    --main-info-top:45%;
+    --main-info-top:20%;
     --main-h1-shadow: -10px -10px 20px #0a09127a, 10px 10px 20px #0a09127a;
     --main-h1-1st-toggle:none;
     --main-h1-2nd-toggle:block;
@@ -120,15 +111,13 @@
       }
     }
 
-    @media (min-width: 768px) {
-      --main-height : 520px;
-    }
-
     @media (min-width: 640px) {
       --main-info-top: 20%;
       --logo-size:2em;
       --home-mt:80px;
+      --main-height:calc(100vh - 64px);
     }
+}
 }
 
 body {
@@ -147,7 +136,6 @@ body {
 .account-image-overlay {
   margin-top: var(--home-mt);
 }
-
 
 p, h2, h3 {
   font-family: var(--main-font);
@@ -168,15 +156,9 @@ button:hover {
   border: var(--button-hov-border);
 }
 
-
 .navbar {
   border: var(--nav-border);
   background: var(--nav-bg);
-
-  h1 {
-    color: var(--logo-color);
-    font-size:var(--logo-size);
-  }
 
   .filled-button{
     background: var(--nav-button-bg);
@@ -260,13 +242,8 @@ img {
 
 .switchcircle {
   background: var(--switch-btn-bg-color);
-  color: var(--switch-btn-color);
-  border-radius: 100px;
-}
-
-.switchcircle:hover {
-  background: var(--switch-btn-bg-color-hov);
-  color: var(--switch-btn-color-hov);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .btn-retro {
@@ -279,10 +256,12 @@ img {
 
 .glitch{
   color:white;
-  font-size:100px;
+  font-size:4em;
+  line-height:1em;
   position:relative;
   margin:0 auto;
 }
+
 @keyframes noise-anim{
   $steps:20;
   @for $i from 0 through $steps{
@@ -388,7 +367,6 @@ img {
   .main p {
     max-width: 45%;
   }
-}
 }
 
 .row-container {
