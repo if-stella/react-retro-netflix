@@ -31,11 +31,10 @@ const Row = ({title, fetchURL, rowID}) => {
     <div className='relative flex items-center group'>
       <MdChevronLeft
       onClick={slideLeft}
-      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer left-4 new-row-icon z-10"
-      size={40}/>
+      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer left-2 sm:left-4 new-row-icon z-[14] h-7 w-7 sm:h-10 sm:w-10"/>
       <ChevronLeft
       onClick={slideLeft}
-      className="h-7 w-7 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer left-4 retro-row-icon z-[12]" />
+      className="h-6 w-6 sm:h-8 sm:w-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] left-2 sm:left-4 retro-row-icon" />
       <div id={'slider' + rowID} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
         {movies.map((item, id) => (
           <Movie key={id} item={item} />
@@ -43,11 +42,10 @@ const Row = ({title, fetchURL, rowID}) => {
       </div>
       <MdChevronRight
       onClick={slideRight}
-      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 right-4 new-row-icon"
-      size={40}/>
+      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] right-2 sm:right-4 new-row-icon h-7 w-7 sm:h-10 sm:w-10"/>
       <ChevronRight
       onClick={slideRight}
-      className="h-7 w-7 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[12] right-4 retro-row-icon" />
+      className="h-6 w-6 sm:h-8 sm:w-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] right-2 sm:right-4 retro-row-icon" />
     </div>
     </div>
   )

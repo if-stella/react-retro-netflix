@@ -82,7 +82,7 @@
     --button-fs:1.2em;
     --logo-size:1em;
     --logo-color:#ffffff;
-    --switch-btn-bg-color:#000;
+    --switch-btn-bg-color:#1b1b1b;
     --nav-button-bor:3px transparent solid;
     --nav-button-bor-hov: 3px #0000FF inset;
     --nav-button-bg:#0000FF;
@@ -131,6 +131,7 @@ body {
 
 .home-container {
   margin-top: var(--home-mt);
+  padding-bottom:1em;
 }
 
 .account-container {
@@ -323,6 +324,10 @@ img {
 
 .new-icon {
   display: var(--new-icon-show);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .retro-row-icon {

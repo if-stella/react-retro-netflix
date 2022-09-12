@@ -46,11 +46,10 @@ const SavedShows = () => {
       <div className='relative flex items-center group'>
       <MdChevronLeft
       onClick={slideLeft}
-      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 left-4 new-row-icon"
-      size={40}/>
+      className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer left-2 sm:left-4 new-row-icon z-[14] h-7 w-7 sm:h-10 sm:w-10"/>
       <ChevronLeft
       onClick={slideLeft}
-      className="h-7 w-7 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 left-4 retro-row-icon" />
+      className="h-6 w-6 sm:h-8 sm:w-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] left-2 sm:left-4 retro-row-icon" />
         <div
           id={'slider'}
           className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
@@ -69,18 +68,17 @@ const SavedShows = () => {
                 <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
                   {item?.title}
                 </p>
-                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-4 right-4'><ImCross className="new-icon"/> <Cross className='retro-icon w-6 h-6'  /></p>
+                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-2 left-2 sm:top-4 sm:left-4'><ImCross className="new-icon"/> <Cross className='retro-icon w-6 h-6'  /></p>
               </div>
             </div>
           ))}
         </div>
         <MdChevronRight
         onClick={slideRight}
-        className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 right-4 new-row-icon"
-        size={40}/>
+        className="bg-white rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] right-2 sm:right-4 new-row-icon h-7 w-7 sm:h-10 sm:w-10"/>
         <ChevronRight
         onClick={slideRight}
-        className="h-7 w-7 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 right-4 retro-row-icon" />
+        className="h-6 w-6 sm:h-8 sm:w-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] right-2 sm:right-4 retro-row-icon" />
       </div>
     </>
   );
