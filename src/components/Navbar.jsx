@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={navbar ? 'navbar active w-full h-[64px] sm:h-[80px] flex justify-between items-center p-4 z-[50] absolute top-0' : 'navbar w-full h-[64px] sm:h-[80px] flex justify-between items-center p-4 z-[50] absolute top-0'}>
+    <div className={navbar ? 'navbar active w-full h-[62px] sm:h-[70px] flex justify-between items-center p-4 z-[50] absolute top-0' : 'navbar w-full h-[62px] sm:h-[70px] flex justify-between items-center p-4 z-[50] absolute top-0'}>
       <Link to="/">
         <LogoRetro className="cursor-pointer w-28 sm:w-32 retro-icon"/>
         <LogoModern className="cursor-pointer w-28 sm:w-32 new-icon"/>
@@ -54,13 +54,13 @@ const Navbar = () => {
       <div onClick={handleClick} className='md:hidden text-white z-[55]'>
         {!nav ?
         <>
-        <Burger className="retro-icon cursor-pointer w-7 h-7"/>
+        <Burger className="retro-icon cursor-pointer absolute top-4 right-3 w-8 h-8"/>
         <FaBars className="new-icon cursor-pointer w-5 h-5"/>
         </>
          :
         <>
         <FaTimes className="cursor-pointer new-icon w-5 h-5" />
-        <Close className="cursor-pointer retro-icon w-5 h-5"/>
+        <Close className="cursor-pointer retro-icon w-6 h-6"/>
         </>}
       </div>
 
@@ -70,7 +70,7 @@ const Navbar = () => {
           <Link to='/account'>
             <button className='primary sm:pr-4 font-semibold border-none hover:border-none textlink'>Your Account</button>
           </Link>
-          <button onClick={handleLogout} className='bg-red-600/95 hover:bg-red-600 px-5 py-2.5 cursor-pointer primary font-semibold filled-button'>Logout</button>
+          <button onClick={handleLogout} className='px-5 py-2.5 cursor-pointer primary font-semibold filled-button'>Logout</button>
         </div>
       ) : (
         <div className={!nav ? 'hidden' : 'mobinav top-0 left-0 w-full h-screen flex flex-col justify-center items-center gap-7'}>
@@ -78,7 +78,7 @@ const Navbar = () => {
             <button className='primary sm:pr-4 font-semibold border-none hover:border-none textlink'>Log In</button>
           </Link>
           <Link to='/signup'>
-            <button className='bg-red-600/95 hover:bg-red-600 px-5 py-2.5 cursor-pointer primary font-semibold border-none filled-button'>Sign Up</button>
+            <button className='px-5 py-2.5 cursor-pointer primary font-semibold border-none filled-button'>Sign Up</button>
           </Link>
         </div>
       )}
