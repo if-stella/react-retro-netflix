@@ -26,18 +26,18 @@ const Main = () => {
   return (
     <div className='w-full text-white main'>
       <div className="w-full bg-blue-700">
-        <div className='main-overlay absolute'></div>
+        <div className='main-overlay absolute' id="noise"></div>
           <img className="object-cover object-center"
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie?.title}/>
         </div>
       <div className="w-full p-6 sm:p-16 main-info">
         <h1 className='text-4xl md:text-7xl font-bold'>{movie?.title}</h1>
-        <h1 className="glitch text-4xl md:text-7xl font-bold" data-text={movie?.title}>{movie?.title}</h1>
+        <h1 className="glitch text-4xl md:text-7xl font-bold z-[12]" data-text={movie?.title}>{movie?.title}</h1>
         <div className='my-4'>
-          <button className=' text-black/90 border-white py-2 w-full sm:w-auto sm:px-5 font-semibold hover:bg-white hover:text-black hover:border-gray-800 flex justify-center items-center gap-2'><span className="glitchsmall" data-text="Play">Play</span><Play className="w-5 h-5 retro-icon"/><BsFillPlayFill className="w-5 h-5 new-icon"/></button>
+          <button className=' text-black/90 border-white py-2 w-full sm:w-auto sm:px-5 font-semibold hover:bg-white hover:text-black hover:border-gray-800 flex justify-center items-center gap-2 relative z-[12]'>Play<Play className="w-5 h-5 retro-icon"/><BsFillPlayFill className="w-5 h-5 new-icon"/></button>
         </div>
-        <p className='my-4'>
+        <p className='my-4 relative z-[12]'>
           {truncateString(movie?.overview, 150)}
         </p>
       </div>
