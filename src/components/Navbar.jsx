@@ -74,10 +74,10 @@ const Navbar = () => {
         </div>
       ) : (
         <div className={!nav ? 'hidden' : 'mobinav top-0 left-0 w-full h-screen flex flex-col justify-center items-center gap-7'}>
-          <Link to='/login'>
+          <Link onClick={handleClick} to='/login'>
             <button className='primary sm:pr-4 font-semibold border-none hover:border-none textlink'>Log In</button>
           </Link>
-          <Link to='/signup'>
+          <Link onClick={handleClick} to='/signup'>
             <button className='px-5 py-2.5 cursor-pointer primary font-semibold border-none filled-button'>Sign Up</button>
           </Link>
         </div>
