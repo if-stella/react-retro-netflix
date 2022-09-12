@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const ThemeButton = ({setTheme}) => {
   return(
-      <div className="fixed top-1/2 transform -translate-y-1/2 right-0 z-[20]">
+      <div className="fixed top-20 sm:top-1/2 sm:transform sm:-translate-y-1/2 right-0 z-[20]">
         <ThemeCircle setTheme={setTheme} value="" icon={<TXTflix className="h-10 w-10 mr-1 p-2 btn-modern fill-white hover:fill-red-600" />} />
         <ThemeCircle setTheme={setTheme} value="retro" icon={<TXTflixold className="h-10 w-10 mr-1 p-2 btn-retro fill-gray-900 hover:fill-red-600"/>}/>
       </div>
