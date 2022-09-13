@@ -54,12 +54,17 @@
     --retro-row-icon-hov:none;
     --new-row-icon-hov:block;
     --account-img-height:400px;
+    --modern-bg-show:block;
+    --retro-bg-show:none;
+    --retro-full-bg-show:none;
+    --modern-full-bg-show:none;
     --toggle-noise:none;
 
     @media (min-width: 640px) {
       --main-info-top: 30%;
       --logo-size:2em;
       --main-height:80vh;
+      --modern-full-bg-show:block;
     }
   }
 
@@ -106,7 +111,9 @@
     --new-icon-show:none;
     --retro-row-icon-hov:block;
     --new-row-icon-hov:none;
-    --account-img-height:320px;
+    --account-img-height:328px;
+    --modern-bg-show:none;
+    --retro-bg-show:block;
     --toggle-noise:block;
 
     @media (min-width: 1280px) {
@@ -121,6 +128,7 @@
       --home-mt:70px;
       --main-height:calc(80vh - 70px);
       --main-p-size:1.25em;
+      --retro-full-bg-show:block;
 
       .glitch {
         font-size:4em;
@@ -388,6 +396,22 @@ img {
   .main p {
     max-width: 45%;
   }
+}
+
+.retro-bg {
+  display: var(--retro-bg-show);
+}
+
+.modern-bg {
+  display: var(--modern-bg-show);
+}
+
+.modern-full-bg {
+  display: var(--modern-full-bg-show);
+}
+
+.retro-full-bg {
+  display: var(--retro-full-bg-show);
 }
 
 .row-container {
