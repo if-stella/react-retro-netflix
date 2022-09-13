@@ -88,13 +88,13 @@
     --nav-button-bg:#0000FF;
     --nav-button-bg-hov:#0000FF;
     --nav-button-pad:0.3em 0.75em;
-    --main-height: calc(100vh - 62px);
+    --main-height: 100vh;
     --main-btn-first-hov-bg:#ffffff;
     --main-btn-first-bg: #ffffff;
     --main-p-col: #fff;
-    --main-p-size:1.25em;
+    --main-p-size:1.1em;
     --main-p-max-w:100%;
-    --main-info-top:20%;
+    --main-info-top:25%;
     --main-h1-shadow: -10px -10px 20px #0a09127a, 10px 10px 20px #0a09127a;
     --main-h1-1st-toggle:none;
     --main-h1-2nd-toggle:block;
@@ -120,6 +120,12 @@
       --logo-size:2em;
       --home-mt:70px;
       --main-height:calc(80vh - 70px);
+      --main-p-size:1.25em;
+
+      .glitch {
+        font-size:4em;
+        line-height:1em;
+      }
     }
 }
 }
@@ -267,7 +273,7 @@ img {
 
 .glitch{
   color:white;
-  font-size:4em;
+  font-size:3em;
   line-height:1em;
   position:relative;
   margin:0 auto;
@@ -407,12 +413,12 @@ img {
   left: -100%;
   height: 300%;
   width: 300%;
-  background: url(http://fariskassim.com/stage/codepenstuff/noise.png);
+  background: url(https://res.cloudinary.com/dhrtgukmg/image/upload/v1663062219/txtflix/grain_1_e4eb1b.png);
   pointer-events: none;
   display: block;
-  opacity: 1;
-  -webkit-animation: grain 2s steps(10) infinite;
-  animation: grain 2s steps(10) infinite;
+  opacity: 0.5;
+  -webkit-animation: grain 9s steps(10) infinite;
+  animation: grain 9s steps(10) infinite;
   will-change: transform;
 }
 
