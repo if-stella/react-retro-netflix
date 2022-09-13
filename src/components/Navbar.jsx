@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={navbar ? 'navbar active w-full h-[62px] sm:h-[70px] flex justify-between items-center p-4 z-[50] absolute top-0' : 'navbar w-full h-[62px] sm:h-[70px] flex justify-between items-center p-4 z-[50] absolute top-0'}>
+    <div className={navbar ? 'navbar active w-full h-[62px] sm:h-[70px] flex justify-between items-center p-4 z-[50] fixed top-0' : 'navbar w-full h-[62px] sm:h-[70px] flex justify-between items-center p-4 z-[50] fixed top-0'}>
       <Link to="/">
         <LogoRetro className="cursor-pointer w-28 sm:w-32 retro-icon"/>
         <LogoModern className="cursor-pointer w-28 sm:w-32 new-icon"/>
