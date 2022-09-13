@@ -65,10 +65,10 @@ const SavedShows = () => {
                 alt={item?.title}
               />
               <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white'>
-                <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
+                <p className='white-space-normal text-[10px] md:text-sm lg:text-lg font-bold flex justify-center items-center h-full text-center'>
                   {item?.title}
                 </p>
-                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-2 left-2 sm:top-4 sm:left-4'><ImCross className="new-icon"/> <Cross className='retro-icon w-6 h-6'  /></p>
+                <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-2 left-3 sm:top-4 sm:left-5'><ImCross className="new-icon w-3 h-3 sm:w-5 sm:h-5"/> <Cross className='retro-icon w-4 h-4 sm:w-6 sm:h-6 fill-white hover:fill-red-600'  /></p>
               </div>
             </div>
           ))}
