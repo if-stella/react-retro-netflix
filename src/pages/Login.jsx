@@ -36,11 +36,8 @@ const Login = () => {
             <input onChange={(e) => setEmail(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="email" placeholder="Email" autoComplete="email"/>
             <input onChange={(e) => setPassword(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="password" placeholder="Password" autoComplete="current-password"/>
             <button className="bg-red-600/95 hover:bg-red-600 px-5 py-3 my-6 cursor-pointer text-white/90 hover:text-white font-semibold">Log in</button>
-            <div className="flex justify-between items-center text-sm text-gray-500">
-              <p className='flex'><input className="mr-2 accent-red-800" type="checkbox"/>Remember me next time</p>
-            </div>
           </form>
-          <p className="pt-8">
+          <p className="pt-3">
               <span className='text-gray-500'>
                 New to Textflex?
               </span>{' '}

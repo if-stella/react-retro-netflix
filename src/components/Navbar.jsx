@@ -54,13 +54,13 @@ const Navbar = () => {
       <div onClick={handleClick} className='md:hidden text-white z-[55]'>
         {!nav ?
         <>
-        <Burger className="retro-icon cursor-pointer absolute top-4 right-3 w-8 h-8"/>
+        <Burger className="retro-icon cursor-pointer fill-white absolute top-4 right-3 w-8 h-8"/>
         <FaBars className="new-icon cursor-pointer w-5 h-5"/>
         </>
          :
         <>
         <FaTimes className="cursor-pointer new-icon w-5 h-5" />
-        <Close className="cursor-pointer retro-icon w-6 h-6"/>
+        <Close className="cursor-pointer fill-white retro-icon w-6 h-6"/>
         </>}
       </div>
 
