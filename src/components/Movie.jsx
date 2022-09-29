@@ -49,12 +49,12 @@ const Movie = ({ item }) => {
           <p onClick={saveShow}>
           {like ? (
             <>
-            <FaHeart className='new-icon absolute text-red-600 top-2 left-2 sm:top-4 sm:left-4 sm:w-6 sm:h-6 w-5 h-5' />
+            <FaHeart className='new-icon absolute text-red-600 top-2 left-2 sm:top-4 sm:left-4 sm:w-6 sm:h-6 w-5 h-5 z-[12]' />
             <HeartFill className='retro-icon absolute top-2 left-2 sm:top-4 sm:left-4 sm:w-6 sm:h-6 w-5 h-5 z-[12]' />
             </>
           ) : (
             <>
-            <FaRegHeart className='new-icon absolute text-gray-300 hover:text-red-600 top-2 left-2 sm:top-4 sm:left-4 sm:w-6 sm:h-6 w-5 h-5' />
+            <FaRegHeart className='new-icon absolute text-gray-300 hover:text-red-600 top-2 left-2 sm:top-4 sm:left-4 sm:w-6 sm:h-6 w-5 h-5 z-[12]' />
             <HeartEmpty className='retro-icon absolute top-2 left-2 sm:top-4 sm:left-4 sm:w-6 sm:h-6 w-5 h-5 fill-gray-300 hover:fill-red-600 z-[12]' />
             </>
           )}
