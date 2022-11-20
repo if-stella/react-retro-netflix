@@ -33,9 +33,9 @@ const Login = () => {
           <h1 className="text-3xl font-bold">Welcome back!</h1>
           {error ? <p className='p-3 bg-red-400 my-2'>{error}</p> : null}
           <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
-            <input onChange={(e) => setEmail(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="email" placeholder="Email" autoComplete="email"/>
-            <input onChange={(e) => setPassword(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="password" placeholder="Password" autoComplete="current-password"/>
-            <button className="bg-red-600/95 hover:bg-red-600 px-5 py-3 my-6 cursor-pointer text-white/90 hover:text-white font-semibold">Log in</button>
+            <input onChange={(e) => setEmail(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="email" placeholder="Email" autoComplete="email" rel="noreferrer noopener"/>
+            <input onChange={(e) => setPassword(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="password" placeholder="Password" autoComplete="current-password" rel="noreferrer noopener"/>
+            <button className="bg-red-600/95 hover:bg-red-600 px-5 py-3 my-6 cursor-pointer text-white/90 hover:text-white font-semibold" rel="noreferrer noopener">Log in</button>
           </form>
           <p className="pt-3">
               <span className='text-gray-500'>
