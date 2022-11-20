@@ -29,15 +29,15 @@ const Signup = () => {
             <div className="max-w-[343px] mx-auto flex flex-col h-[480px] justify-center">
               <h1 className="text-3xl font-bold">Sign up</h1>
               <form onSubmit={handleSubmit} className="w-full flex flex-col py-4">
-                <input onChange={(e) => setEmail(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="email" placeholder="Email" autoComplete="email"/>
-                <input onChange={(e) => setPassword(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="password" placeholder="Password" autoComplete="current-password"/>
-                <button className="bg-red-600/95 hover:bg-red-600 px-5 py-3 my-6 cursor-pointer text-white/90 hover:text-white font-semibold">Sign up</button>
+                <input onChange={(e) => setEmail(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="email" placeholder="Email" autoComplete="email" rel="noreferrer noopener"/>
+                <input onChange={(e) => setPassword(e.target.value)} className="p-3 my-2 bg-gray-500 focus:outline-0 focus:ring-0" type="password" placeholder="Password" autoComplete="current-password" rel="noreferrer noopener"/>
+                <button className="bg-red-600/95 hover:bg-red-600 px-5 py-3 my-6 cursor-pointer text-white/90 hover:text-white font-semibold" rel="noreferrer noopener">Sign up</button>
               </form>
               <p className="pt-3">
                 <span className='text-gray-500'>
                   Already subscribed?
                 </span>{' '}
-                <Link to='/login' className="font-semibold">Log in</Link>
+                <Link to='/login' className="font-semibold" rel="noreferrer noopener">Log in</Link>
               </p>
             </div>
           </div>
