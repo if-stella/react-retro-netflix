@@ -5,6 +5,7 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import {ReactComponent as ChevronLeft} from '../assets/txt-icon-chevron-left.svg';
 import {ReactComponent as ChevronRight} from '../assets/txt-icon-chevron-right.svg';
 
+
 const Row = ({title, fetchURL, rowID}) => {
   const [movies, setMovies] = useState([]);
 
@@ -27,6 +28,7 @@ const Row = ({title, fetchURL, rowID}) => {
 
   return (
     <div className="row-container">
+
     <h2 className='text-white font-bold md:text-xl px-5 mt-4 mb-2 relative z-[12]'>{title}</h2>
     <div className='relative flex items-center group'>
       <MdChevronLeft
@@ -37,7 +39,7 @@ const Row = ({title, fetchURL, rowID}) => {
       className="h-6 w-6 sm:h-8 sm:w-8 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-[14] left-2 sm:left-4 retro-row-icon" />
       <div id={'slider' + rowID} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
         {movies.map((item, id) => (
-          <Movie key={id} item={item} />
+          <Movie key={id} item={item}/>
         ))}
       </div>
       <MdChevronRight
