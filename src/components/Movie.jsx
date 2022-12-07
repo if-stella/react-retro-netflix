@@ -5,13 +5,12 @@ import { db } from '../firebase';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import {ReactComponent as HeartEmpty} from '../assets/txt-icon-heart-empty.svg';
 import {ReactComponent as HeartFill} from '../assets/txt-icon-heart-fill.svg';
+import Modal from './Modal';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
   const {user} = UserAuth();
-
-
   const movieID = doc(db, 'users', `${user?.email}`);
 
   const saveShow = async () => {
@@ -37,11 +36,20 @@ const Movie = ({ item }) => {
       return str;
     }
   };
+  const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative pl-2'>
+    <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative pl-2' onClick={() => setOpenModal(true)}>
+      <Modal
+      title={item?.title}
+      language={item?.original_language}
+      summary={item?.overview}
+      imagesrc={item?.backdrop_path}
+      postersrc={item?.poster_path}
+      rating={Math.round(item?.vote_average)}
+      open={openModal}
+      onClose={() => setOpenModal(false)} />
       <img className='h-auto block' src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={item?.title}/>
-
       <div className='absolute top-0 left-0 block w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 ml-2 text-white'>
           <p className='white-space-normal text-[10px] md:text-sm lg:text-lg font-semibold flex justify-center items-center h-full text-center relative z-[12]'>
             {truncateString(item?.title, 16)}
@@ -61,6 +69,7 @@ const Movie = ({ item }) => {
         </p>
       </div>
     </div>
+
   )
 }
 

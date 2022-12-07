@@ -25,7 +25,7 @@ const Main = () => {
 
   return (
     <div className='w-full text-white main'>
-      <div className="w-full bg-blue-700">
+      <div className="w-full">
         <div className='main-overlay absolute'></div>
         <div id="noise"></div>
           <img className="object-cover object-center"
