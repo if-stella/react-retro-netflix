@@ -59,6 +59,11 @@
     --retro-full-bg-show:none;
     --modern-full-bg-show:none;
     --toggle-noise:none;
+    --modal-overlay-grad1: linear-gradient(to top, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.5) 100%);
+    --modal-overlay-grad2: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.5) 100%);
+    --modal-overlay-bg: rgba(255, 255, 255, 0.5);
+    --modal-p-color: rgba(0, 0, 0, 0.9);
+    --minimodal-bg: rgba(255, 255, 255, 0.9);
 
     @media (min-width: 640px) {
       --main-info-top: 30%;
@@ -115,6 +120,9 @@
     --modern-bg-show:none;
     --retro-bg-show:block;
     --toggle-noise:block;
+    --modal-overlay-bg:black;
+    --modal-p-color: white;
+    --minimodal-bg: black;
 
     @media (min-width: 1280px) {
       .main p {
@@ -433,12 +441,40 @@ img {
   will-change: transform;
 }
 
+.modaloverlay_b-to-t {
+  background: var(--modal-overlay-grad1);
+}
+
+.modaloverlay_r-to-l {
+  background: var(--modal-overlay-grad2);
+}
+
+.modalbg {
+  background: transparent;
+}
+
+.modalpcolor {
+  color: var(--modal-p-color);
+}
+
+.minimodalbg {
+  background: var(--minimodal-bg);
+}
+
 @-webkit-keyframes grain{0%,to{-webkit-transform:translate(0);transform:translate(0)}10%{-webkit-transform:translate(-5%,-10%);transform:translate(-5%,-10%)}20%{-webkit-transform:translate(-15%,5%);transform:translate(-15%,5%)}30%{-webkit-transform:translate(7%,-25%);transform:translate(7%,-25%)}40%{-webkit-transform:translate(21%,25%);transform:translate(21%,25%)}50%{-webkit-transform:translate(-25%,10%);transform:translate(-25%,10%)}60%{-webkit-transform:translate(15%,5%);transform:translate(15%,5%)}70%{-webkit-transform:translateY(15%);transform:translateY(15%)}80%{-webkit-transform:translate(25%,35%);transform:translate(25%,35%)}90%{-webkit-transform:translate(-10%,10%);transform:translate(-10%,10%)}}@keyframes grain{0%,to{-webkit-transform:translate(0);transform:translate(0)}10%{-webkit-transform:translate(-5%,-10%);transform:translate(-5%,-10%)}20%{-webkit-transform:translate(-15%,5%);transform:translate(-15%,5%)}30%{-webkit-transform:translate(7%,-25%);transform:translate(7%,-25%)}40%{-webkit-transform:translate(21%,25%);transform:translate(21%,25%)}50%{-webkit-transform:translate(-25%,10%);transform:translate(-25%,10%)}60%{-webkit-transform:translate(15%,5%);transform:translate(15%,5%)}70%{-webkit-transform:translateY(15%);transform:translateY(15%)}80%{-webkit-transform:translate(25%,35%);transform:translate(25%,35%)}90%{-webkit-transform:translate(-10%,10%);transform:translate(-10%,10%)}}
 @-webkit-keyframes grain2{0%,to{-webkit-transform:translate(0);transform:translate(0)}10%{-webkit-transform:translate(-1%,-2%);transform:translate(-1%,-2%)}20%{-webkit-transform:translate(-2%,1%);transform:translate(-2%,1%)}30%{-webkit-transform:translate(3%,-5%);transform:translate(3%,-5%)}40%{-webkit-transform:translate(5%,5%);transform:translate(5%,5%)}50%{-webkit-transform:translate(-5%,2%);transform:translate(-5%,2%)}60%{-webkit-transform:translate(3%,1%);transform:translate(3%,1%)}70%{-webkit-transform:translateY(3%);transform:translateY(3%)}80%{-webkit-transform:translate(5%,7%);transform:translate(5%,7%)}90%{-webkit-transform:translate(-2%,2%);transform:translate(-2%,2%)}}@keyframes grain2{0%,to{-webkit-transform:translate(0);transform:translate(0)}10%{-webkit-transform:translate(-1%,-2%);transform:translate(-1%,-2%)}20%{-webkit-transform:translate(-3%,1%);transform:translate(-3%,1%)}30%{-webkit-transform:translate(3%,-5%);transform:translate(3%,-5%)}40%{-webkit-transform:translate(5%,5%);transform:translate(5%,5%)}50%{-webkit-transform:translate(-5%,2%);transform:translate(-5%,2%)}60%{-webkit-transform:translate(3%,1%);transform:translate(3%,1%)}70%{-webkit-transform:translateY(5%);transform:translateY(5%)}80%{-webkit-transform:translate(5%,7%);transform:translate(5%,7%)}90%{-webkit-transform:translate(-2%,2%);transform:translate(-2%,2%)}}
 
 @media (min-width: 768px) {
   .main p {
     max-width: 70%;
+  }
+
+  .modalbg {
+    background: var(--modal-overlay-bg);
+  }
+
+  .minimodalbg {
+    background: transparent;
   }
 }
 
