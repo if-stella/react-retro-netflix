@@ -28,7 +28,7 @@ const Main = () => {
       <div className="w-full">
         <div className='main-overlay absolute'></div>
         <div id="noise"></div>
-          <img className="object-cover object-center"
+          <img className="object-cover object-center imgfilter-clr"
           src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie?.title}/>
         </div>
