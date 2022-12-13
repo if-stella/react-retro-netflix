@@ -54,9 +54,9 @@ const Movie = ({ item }) => {
           <img className='h-auto block imgfilter' src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={item?.title}/>
         </picture>
       </div>
-      <div className='absolute z-[3] top-0 left-0 block w-[97.5%] h-full ml-2 text-white movie-overlay'>
-          <p className='white-space-normal text-[10px] md:text-sm lg:text-lg font-semibold flex justify-center items-center h-full text-center relative z-[12]'>
-            {truncateString(item?.title, 16)}
+      <div className='absolute z-[3] top-0 left-0 block w-[97.5%] p-[8px] md:p-[16px] xl:p-[32px] h-full ml-2 text-white movie-overlay'>
+          <p className='break-words whitespace-pre-wrap text-[10px] md:text-sm lg:text-lg font-semibold flex justify-center items-center h-full text-center relative z-[12]'>
+            {truncateString(item?.title, 30)}
           </p>
           <p onClick={saveShow}>
           {like ? (
