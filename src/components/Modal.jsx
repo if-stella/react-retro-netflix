@@ -20,7 +20,7 @@ const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, post
         <Cross className='retro-icon fill-white/90 hover:fill-red-500 h-5 lg:h-6 xl:h-7 absolute right-[-8px] sm:right-[10px] md:right-[24px] lg:right-[28px] top-[-146px] sm:top-[20px] md:top-[28px] lg:top-[32px] z-[31]' onClick={onClose}/>
         <div className="modalbg md:absolute md:rounded-tr-md rounded-bl-md md:rounded-bl-none rounded-br-md md:h-full w-full p-0 sm:p-4 md:px-8 md:pt-6 md:pb-4 mt-4 sm:mt-0 flex flex-col justify-between z-[30]">
           <div className="upperhalf">
-            <h3 className="hidden sm:block font-bold sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl break-words whitespace-pre-wrap mr-6 lg:mr-10">{title}</h3>
+            <h1 className="hidden sm:block font-bold sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl break-words whitespace-pre-wrap mr-6 lg:mr-10">{title}</h1>
             <p className="break-words whitespace-pre-wrap sm:mt-2">{summary}</p>
           </div>
           <div className="lowerhalf">

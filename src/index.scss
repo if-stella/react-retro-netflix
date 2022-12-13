@@ -114,7 +114,8 @@
     --nav-button-bg:#0000FF;
     --nav-button-bg-hov:#0000FF;
     --nav-button-pad:0.3em 0.75em;
-    --movie-overlay-bg: blue;
+    --movie-overlay-bg: black;
+    --movie-overlay-border: white 2px solid;
     --main-height: 100vh;
     --main-btn-first-hov-bg:#ffffff;
     --main-btn-first-bg: #ffffff;
@@ -319,12 +320,13 @@ img {
 
 .movie-overlay {
   opacity:0;
+  background: var(--movie-overlay-bg);
 }
 
 .movie-overlay:hover {
   opacity:1;
   background: var(--movie-overlay-bg);
-
+  border: var(--movie-overlay-border);
 }
 
 .switchcircle {
