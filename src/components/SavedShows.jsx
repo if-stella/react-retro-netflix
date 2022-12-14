@@ -60,12 +60,12 @@ const SavedShows = () => {
               className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative pl-2'
             >
               <img
-                className='w-full h-auto block'
+                className='w-full h-auto block imgfilter'
                 src={`https://image.tmdb.org/t/p/w500/${item?.img}`}
                 alt={item?.title}
               />
-              <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white'>
-                <p className='white-space-normal text-[10px] md:text-sm lg:text-lg font-bold flex justify-center items-center h-full text-center'>
+              <div className='absolute z-[3] top-0 left-0 block w-[97%] p-[8px] md:p-[16px] xl:p-[32px] h-full ml-2 text-white movie-overlay border-none'>
+                <p className='break-words whitespace-pre-wrap text-[10px] md:text-sm lg:text-lg font-bold flex justify-center items-center h-full text-center'>
                   {item?.title}
                 </p>
                 <p onClick={()=> deleteShow(item.id)} className='absolute text-gray-300 hover:text-red-600 top-2 left-3 sm:top-4 sm:left-5'><ImCross className="new-icon w-3 h-3 sm:w-5 sm:h-5"/> <Cross className='retro-icon w-4 h-4 sm:w-6 sm:h-6 fill-white hover:fill-red-600'  /></p>

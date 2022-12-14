@@ -1,0 +1,19 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="current" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 0H15V4H11V0Z" fill="current"/>
+<path d="M4 0H8V4H4V0Z" fill="current"/>
+<path d="M18 0H22V4H18V0Z" fill="current"/>
+<path d="M25 0H29V4H25V0Z" fill="current"/>
+<path d="M8 8H14V12H8V8Z" fill="current"/>
+<path d="M17 8H23V12H17V8Z" fill="current"/>
+<path d="M26 8H32V12H26V8Z" fill="current"/>
+<path d="M8 15H14V19H8V15Z" fill="current"/>
+<path d="M17 15H23V19H17V15Z" fill="current"/>
+<path d="M26 15H32V19H26V15Z" fill="current"/>
+<path d="M8 22H14V26H8V22Z" fill="current"/>
+<path d="M17 22H23V26H17V22Z" fill="current"/>
+<path d="M26 22H32V26H26V22Z" fill="current"/>
+<path d="M32 0H36V4H32V0Z" fill="current"/>
+<rect y="4" width="4" height="26" fill="current"/>
+<rect x="36" y="30" width="4" height="32" transform="rotate(90 36 30)" fill="current"/>
+<rect x="40" y="30" width="4" height="26" transform="rotate(-180 40 30)" fill="current"/>
+</svg>
