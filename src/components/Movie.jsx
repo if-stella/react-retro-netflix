@@ -43,9 +43,10 @@ const Movie = ({ item }) => {
       <Modal
       title={item?.title}
       language={item?.original_language}
-      summary={item?.overview}
+      summary={truncateString(item?.overview, 245)}
       imagesrc={item?.backdrop_path}
       postersrc={item?.poster_path}
+      release={item?.release_date.slice(0,4)}
       rating={Math.round(item?.vote_average)}
       open={openModal}
       onClose={() => setOpenModal(false)} />
