@@ -36,7 +36,7 @@ const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, post
               </div>
               <div className="justify-center text-center flex flex-col">
                 <div className="flex mx-auto flex-col md:flex-row">
-                  <Date className='modal-icon fill-white/90 h-5 lg:h-6 xl:h-7 lg:mt-[2px] bg-yellow-400 sm:bg-orange-500 md:bg-red-600 lg:bg-purple-600 xl:bg-blue-700'/>
+                  <Date className='modal-icon fill-white/90 h-5 lg:h-6 xl:h-7 lg:mt-[2px]'/>
                   <h3 className="font-bold text-sm lg:text-lg">Year</h3>
                 </div>
                 <p>{release}</p>
