@@ -4,16 +4,18 @@ import {ReactComponent as Cross} from '../assets/txt-icon-cross.svg';
 import {ReactComponent as Language} from '../assets/txt-icon-language.svg';
 import {ReactComponent as Trophy} from '../assets/txt-icon-trophy.svg';
 import {ReactComponent as Date} from '../assets/txt-icon-date.svg';
+import {data} from '../data/data.js';
 
-const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, postersrc, release }) => {
+const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, postersrc, release, genre }) => {
   if (!open) return null
+  const genreIndex = data.findIndex((g)=>g.id===genre)
   return (
     <div onClick={onClose} className="bg-black/90 backdrop-blur-[3px] w-screen h-screen fixed top-[0] left-[0] z-[51]">
       <div onClick={(e) => {
         e.stopPropagation();
       }}
-      className="modalbox minimodalbg modalpcolor w-[311px] sm:w-[390px] md:w-[80%] z-[30] relative top-[11%] sm:top-[7%] md:top-[25%] xl:top-[8%] mx-auto flex flex-col md:flex-row p-4 sm:p-0 modaloutline">
-        <img className='img-roundedness h-[150px] w-[100px] sm:w-[100%] sm:h-[500px] lg:h-full xl:h-auto md:w-[300px] xl:w-[450px] object-cover object-center imgfilter-clr' src={`https://image.tmdb.org/t/p/w500/${postersrc}`} alt={title}/>
+      className="modalbox minimodalbg modalpcolor w-[343px] sm:w-[390px] md:w-[80%] z-[30] relative top-[20%] sm:top-[5%] md:top-[25%] xl:top-[8%] mx-auto flex flex-col md:flex-row p-4 sm:p-0 modaloutline">
+        <img className='img-roundedness h-[150px] w-[100px] sm:w-[100%] sm:h-[500px] lg:h-full xl:h-auto md:w-[300px] xl:w-[450px] object-cover object-center imgfilter-clr posterBorder' src={`https://image.tmdb.org/t/p/w500/${postersrc}`} alt={title}/>
         <div className="sepline"></div>
         <h1 className="flex items-center h-[150px] sm:hidden font-bold text-xl break-words whitespace-pre-wrap absolute top-[16px] left-[132px] mr-[32px]">{title}</h1>
         <div className="relative">
@@ -23,6 +25,11 @@ const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, post
           <div className="upperhalf">
             <h1 className="hidden sm:block font-bold sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl break-words whitespace-pre-wrap mr-6 lg:mr-10">{title}</h1>
             <p className="break-words whitespace-pre-wrap sm:mt-2">{summary}</p>
+            <div className="w-full flex justify-between items-end relative mt-6">
+              <p className="pr-1"><strong>Genre</strong></p>
+              <div className="dotline grow mb-1"></div>
+              <p className="pl-2">{data[genreIndex].name}</p>
+            </div>
           </div>
           <div className="lowerhalf">
           <div className="w-full modalline mt-4 md:mt-6"></div>
