@@ -6,6 +6,7 @@ import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import {ReactComponent as HeartEmpty} from '../assets/txt-icon-heart-empty.svg';
 import {ReactComponent as HeartFill} from '../assets/txt-icon-heart-fill.svg';
 import Modal from './Modal';
+import {data} from '../data/data.js';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
@@ -36,16 +37,18 @@ const Movie = ({ item }) => {
       return str;
     }
   };
+
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative pl-2' onClick={() => setOpenModal(true)}>
+    <div className='w-[175px] sm:w-[220px] md:w-[280px] lg:w-[320px] inline-block cursor-pointer relative pl-2' onClick={() => setOpenModal(true)} >
       <Modal
       title={item?.title}
       language={item?.original_language}
       summary={truncateString(item?.overview, 245)}
       imagesrc={item?.backdrop_path}
       postersrc={item?.poster_path}
+      genre={item?.genre_ids[0]}
       release={item?.release_date.slice(0,4)}
       rating={Math.round(item?.vote_average)}
       open={openModal}
