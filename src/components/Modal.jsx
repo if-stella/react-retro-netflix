@@ -14,7 +14,7 @@ const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, post
       <div onClick={(e) => {
         e.stopPropagation();
       }}
-      className="modalbox minimodalbg modalpcolor w-[343px] sm:w-[390px] md:w-[80%] z-[30] relative top-[20%] sm:top-[5%] md:top-[25%] xl:top-[8%] mx-auto flex flex-col md:flex-row p-4 sm:p-0 modaloutline">
+      className="modalbox minimodalbg modalpcolor w-[343px] sm:w-[390px] md:w-[80%] z-[30] relative top-[20%] sm:top-[5%] md:top-[25%] lg:top-[18%] xl:top-[8%] mx-auto flex flex-col md:flex-row p-4 sm:p-0 modaloutline">
         <img className='img-roundedness h-[150px] w-[100px] sm:w-[100%] sm:h-[500px] lg:h-full xl:h-auto md:w-[300px] xl:w-[450px] object-cover object-center imgfilter-clr posterBorder' src={`https://image.tmdb.org/t/p/w500/${postersrc}`} alt={title}/>
         <div className="sepline"></div>
         <h1 className="flex items-center h-[150px] sm:hidden font-bold text-xl break-words whitespace-pre-wrap absolute top-[16px] left-[132px] mr-[32px]">{title}</h1>
@@ -28,7 +28,10 @@ const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, post
             <div className="w-full flex justify-between items-end relative mt-6">
               <p className="pr-1"><strong>Genre</strong></p>
               <div className="dotline grow mb-1"></div>
-              <p className="pl-2">{data[genreIndex].name}</p>
+              <div className="flex">
+                <div className="retro-icon">{data[genreIndex].icon}</div>
+                <p>{data[genreIndex].name}</p>
+              </div>
             </div>
           </div>
           <div className="lowerhalf">

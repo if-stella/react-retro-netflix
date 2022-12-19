@@ -6,7 +6,6 @@ import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 import {ReactComponent as HeartEmpty} from '../assets/txt-icon-heart-empty.svg';
 import {ReactComponent as HeartFill} from '../assets/txt-icon-heart-fill.svg';
 import Modal from './Modal';
-import {data} from '../data/data.js';
 
 const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
