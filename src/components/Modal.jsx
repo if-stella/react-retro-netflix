@@ -29,7 +29,7 @@ const Modal = ({ open, onClose, title, summary, imagesrc, language, rating, post
               <p className="pr-1"><strong>Genre</strong></p>
               <div className="dotline grow mb-1"></div>
               <div className="flex">
-                <div className="retro-icon">{data[genreIndex].icon}</div>
+                <div className="retro-icon ml-1 mr-2">{data[genreIndex].icon}</div>
                 <p>{data[genreIndex].name}</p>
               </div>
             </div>
